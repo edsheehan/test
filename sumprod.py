@@ -4,12 +4,10 @@ import random
 
 numbers = random.sample(range(1, 201), 6)
 print(numbers)
-numbers[2] = 100
-print(numbers)
 
 def difference(number):
+    """Return the difference between a number and its digit sum."""
     return number - sum(int(digit) for digit in str(number))
-
 
 selected = []
 digit_sums = []
@@ -24,5 +22,5 @@ for _ in range(2):
     selected.append(selected_number)
     digit_sums.append(digit_sum)
     print(numbers, selected, digit_sums)
-print(numbers, selected, digit_sums)
+
 print(sum(numbers))
