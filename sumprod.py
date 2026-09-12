@@ -1,12 +1,14 @@
 """Find the number with the largest difference between itself and its digit sum."""
 import random
 
-numbers = random.sample(range(1, 201), 6)
+numbers = random.sample(range(1, 1000), 8)
 print(numbers)
 
 def difference(number):
     """Return the difference between a number and its digit sum."""
-    return number - sum(int(digit) for digit in str(number))
+    diff = number - sum(int(digit) for digit in str(number))
+    print(f"{number} - {sum(int(digit) for digit in str(number))} = {diff}")
+    return diff
 
 selected = []
 digit_sums = []
