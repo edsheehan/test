@@ -4,10 +4,25 @@ import random
 
 numbers = random.sample(range(1, 201), 6)
 print(numbers)
+numbers[2] = 100
+print(numbers)
 
-selected = max(
-	numbers,
-	key=lambda number: number - sum(int(digit) for digit in str(number)),
-)
-digit_sum = sum(int(digit) for digit in str(selected))
-print(selected, digit_sum, selected - digit_sum)
+def difference(number):
+    return number - sum(int(digit) for digit in str(number))
+
+
+selected = []
+digit_sums = []
+for _ in range(2):
+    selected_index = max(
+        range(len(numbers)),
+        key=lambda index: difference(numbers[index]),
+    )
+    selected_number = numbers[selected_index]
+    digit_sum = sum(int(digit) for digit in str(selected_number))
+    numbers[selected_index] = digit_sum
+    selected.append(selected_number)
+    digit_sums.append(digit_sum)
+    print(numbers, selected, digit_sums)
+print(numbers, selected, digit_sums)
+print(sum(numbers))
