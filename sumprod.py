@@ -1,6 +1,8 @@
-"""Find the number with the largest difference between itself and its digit sum."""
-import random
+"""Find the number with the largest difference between itself and its digit
+sum; replace that number with its digit sum and repeat the process twice. 
+Finally, print the sum of the remaining numbers."""
 
+import random
 numbers = random.sample(range(1, 1000), 8)
 print(numbers)
 
