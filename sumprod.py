@@ -1,7 +1,6 @@
 """Find the number with the largest difference between itself and its digit sum."""
 import random
 
-
 numbers = random.sample(range(1, 201), 6)
 print(numbers)
 
